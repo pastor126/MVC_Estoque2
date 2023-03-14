@@ -17,16 +17,15 @@
       <tbody>
         <?php
           foreach ($produtos as $produto) {
-              $data = date("d/m/Y", time());
+              $data = date("d/m/Y",  strtotime($produto['data']));
               $path_editar = APP.'produto/editar';
               $path_excluir = APP.'produto/excluir';
               echo "
               <tr>
                 <td>{$produto['id']}</td>
-                <td>{$produto['data']}</td>
+                <td>$data</td>
                 <td>{$produto['descricao']}</td>
                 <td>{$produto['fabricante_nome']}</td>
-                <td>$data</td>
                 <td>{$produto['qtde_estoque']}</td>
                 <td>{$produto['valor_compra']}</td>
                 <td>{$produto['valor_venda']}</td>

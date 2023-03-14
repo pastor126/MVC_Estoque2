@@ -9,6 +9,12 @@
           <input type="text" class="form-control" id="nome" value="<?php echo $fabricante['nome']; ?>" name="nome">
       </div>
 
+      <div class="mb-3">
+          <label for="cnpj" class="form-label">CNPJ</label>
+          <input type="text" class="form-control" id="cnpj" value="<?php echo $fabricante['cnpj']; ?>" name="cnpj">
+      </div>
+
       <button class="btn btn-primary" type="submit" name="button">Salvar</button>
-      <button class="btn btn-success" type="submit" name="voltar" value="voltar">Voltar</button>
+      <a class="btn btn-success"  href="<?php echo APP.'produto/listar' ?>" >Home</a>
     </form>
+   

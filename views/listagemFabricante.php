@@ -19,7 +19,8 @@
               echo "
               <tr>
                 <td>{$fabricante['id']}</td>
-                <td>{$fabricante['fabricante']}</td>
+                <td>{$fabricante['nome']}</td>
+                <td>{$fabricante['cnpj']}</td>
                 <td><a class='btn btn-warning' href='$path_editar/{$fabricante['id']}'>Editar</a></td>
                 <td><a class='btn btn-danger' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluir/{$fabricante['id']}'>Excluir</a></td>
               </tr>
