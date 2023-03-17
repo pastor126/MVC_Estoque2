@@ -4,6 +4,7 @@
       <thead>
         <tr>
           <th>ID</th>
+          <th>Tipo</th>
           <th>Data</th>
           <th>Produto</th>
           <th>Fabricante</th>
@@ -23,6 +24,7 @@
               echo "
               <tr>
                 <td>{$produto['id']}</td>
+                <td>{$produto['tipo_nome_tipo']}</td>
                 <td>$data</td>
                 <td>{$produto['descricao']}</td>
                 <td>{$produto['fabricante_nome']}</td>

@@ -4,6 +4,20 @@
       <label for="id" class="form-label">ID</label>
       <input readonly type="text" class="form-control" id="id" value="<?php echo $produto['id']; ?>" name="id">
   </div>
+
+  <div class="mb-3">
+      <label for="nome_tipo" class="form-label">Tipo</label>
+      <select class="form-select" name="tipo_id" id="tipo_id">
+        <?php
+          foreach ($tipos as $tipo) {
+            $selected =
+              $tipo['id'] == $produto['tipo_id']?'selected':'';
+
+            echo "<option $selected value='{$tipo['id']}'>{$tipo['nome_tipo']}</option>";
+          }
+         ?>
+      </select>  </div>
+
   <div class="mb-3">
       <label for="descricao" class="form-label">Produto</label>
       <input type="text" class="form-control" id="descricao" value="<?php echo $produto['descricao']; ?>" name="descricao">

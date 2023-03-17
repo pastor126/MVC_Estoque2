@@ -11,6 +11,7 @@
      function novo() {
        $produto = array();
        $produto['id'] = 0;
+       $produto['nome_tipo'] = "";
        $produto['descricao'] = "";
        $produto['qtde_estoque'] = "";
        $produto['fabricante'] = "";
@@ -20,12 +21,18 @@
        $modelFabricante = new Fabricante();
        $fabricantes = $modelFabricante -> read();
 
-       $this->view('frmproduto', compact('produto', 'fabricantes'));
+       $modelTipo = new Tipo();
+       $tipos = $modelTipo -> read();
+
+       $this->view('frmproduto', compact('produto', 'fabricantes', 'tipos'));
      }
 
      function salvar() {
+       $data = date('d-m-y');
        $produto = array();
        $produto['id'] = $_POST['id'];
+       $produto['tipo_id'] = $_POST['tipo_id'];
+       $produto['data'] = $data;
        $produto['descricao'] = $_POST['descricao'];
        $produto['qtde_estoque'] = $_POST['qtde_estoque'];
        $produto['fabricante_id'] = $_POST['fabricante_id'];
@@ -44,11 +51,14 @@
      function editar($id) {
        $model = new Produto();
        $produto = $model->getById($id);
-       
-       $modelFabricante = new Fabricante();
-       $fabricantes = $modelFabricante->read();
 
-       $this -> view('frmproduto', compact('produto', 'fabricantes'));
+       $modelFabricante = new Fabricante();
+       $fabricantes = $modelFabricante -> read();
+
+       $modelTipo = new Tipo();
+       $tipos = $modelTipo -> read();
+
+       $this->view('frmproduto', compact('produto', 'tipos', 'fabricantes'));
      }
 
      function excluir($id) {
