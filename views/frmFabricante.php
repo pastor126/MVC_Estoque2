@@ -15,6 +15,6 @@
       </div>
 
       <button class="btn btn-primary" type="submit" name="button">Salvar</button>
-      <a class="btn btn-success"  href="<?php echo APP.'produto/listar' ?>" >Home</a>
+      <a class="btn btn-success"  href="<?php echo APP.'fabricante/listar' ?>" >Voltar</a>
     </form>
    
