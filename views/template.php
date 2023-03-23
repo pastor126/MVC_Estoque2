@@ -97,6 +97,11 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?php echo APP.'fabricante/listar' ?>">Fabricante</a>
         </li>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo APP.'compra/listar' ?>">Compras</a>
+        </li>
       </ul>
     </div>
   </div>

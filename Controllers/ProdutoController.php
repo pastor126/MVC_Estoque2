@@ -58,7 +58,7 @@
        $modelTipo = new Tipo();
        $tipos = $modelTipo -> read();
 
-       $this->view('frmproduto', compact('produto', 'tipos', 'fabricantes'));
+       $this->view('frmProduto', compact('produto', 'tipos', 'fabricantes'));
      }
 
      function excluir($id) {

@@ -72,7 +72,7 @@
       $sentenca = $this->conexao->prepare($sql);
       $sentenca->bindParam(":id", $id);
       $sentenca->execute();
-      $dados = $sentenca->fetch();
+      $dados = $sentenca->fetch(PDO::FETCH_ASSOC);
       return $dados;
     }
 
