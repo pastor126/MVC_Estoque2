@@ -18,10 +18,14 @@
       <tbody>
         <?php
           foreach ($produtos as $produto) {
-              $data = date("d/m/Y",  strtotime($produto['data']));
-              $path_editar = APP.'produto/editar';
-              $path_excluir = APP.'produto/excluir';
-              echo "
+            
+
+              if($produto['ativo']=="true"){
+                $data = date("d/m/Y",  strtotime($produto['data']));
+                $path_editar = APP.'produto/editar';
+                $path_excluir = APP.'produto/excluir';
+                $path_excluirP = APP.'produto/excluirP';
+                 echo "
               <tr>
                 <td>{$produto['id']}</td>
                 <td>{$produto['tipo_nome_tipo']}</td>
@@ -32,10 +36,12 @@
                 <td>{$produto['valor_compra']}</td>
                 <td>{$produto['valor_venda']}</td>
                 <td><a class='btn btn-warning' href='$path_editar/{$produto['id']}'>Editar</a></td>
-                <td><a class='btn btn-danger' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluir/{$produto['id']}'>Excluir</a></td>
+                <td><a class='btn btn-danger' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluirP/{$produto['id']}'>Excluir</a></td>
 
               </tr>
               ";
+              }
+             
           }
          ?>
 

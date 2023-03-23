@@ -42,7 +42,6 @@
       $modelProduto = new Produto();
       $produto = $modelProduto -> getById($compra['produto_id']);
       $produto['qtde_estoque'] = $produto['qtde_estoque'] - $compra['quantidade'];
-      var_dump($produto);
       $modelProduto -> update($produto); 
            
       
@@ -58,7 +57,6 @@
      function editar($id) {
        $model = new Compra();
        $compra = $model->getById($id);
-       $compra['quant1'] = $_POST['quant1'];
        $quant2 = $compra['quantidade'] - $compra['quant1'];
        
        $modelProdutos = new Produto();

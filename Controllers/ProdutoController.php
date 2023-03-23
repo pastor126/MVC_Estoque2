@@ -66,6 +66,16 @@
        $model->delete($id);
        $this->redirect('produto/listar');
      }
+
+     function excluirP($id) {
+      $model = new Produto();
+      $produto = $model -> getById($id);
+      $produto['ativo'] = 'false';
+
+      $model->update($produto);
+      $this->redirect('produto/listar');
+    }
+
    }
 
  ?>
