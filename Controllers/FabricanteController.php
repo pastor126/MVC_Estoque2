@@ -34,10 +34,13 @@
       $this -> view("frmFabricante", compact('fabricante'));
     }
 
-    function excluir($id) {
+    function excluirF($id) {
       $model = new Fabricante();
-      $model->delete($id);
-      $this -> redirect("fabricante/listar");
+      $fabricante = $model -> getById($id);
+      $fabricante['ativo'] = 'false';
+
+      $model->update($fabricante);
+      $this->redirect('fabricante/listar');
     }
   }
  ?>

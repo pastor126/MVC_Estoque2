@@ -12,18 +12,20 @@
       <tbody>
         <?php
           foreach ($tipos as $tipo) {
+            if($tipo['ativo']=="true"){
               $path_editar = APP.'tipo/editar';
-              $path_excluir = APP.'tipo/excluir';
+              $path_excluirT = APP.'tipo/excluirT';
               
               echo "
               <tr>
                 <td>{$tipo['id']}</td>
                 <td>{$tipo['nome_tipo']}</td>
                 <td><a class='btn btn-warning' href='$path_editar/{$tipo['id']}'>Editar</a></td>
-                <td><a class='btn btn-danger' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluir/{$tipo['id']}'>Excluir</a></td>
+                <td><a class='btn btn-danger' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluirT/{$tipo['id']}'>Excluir</a></td>
               </tr>
               ";
           }
+        }
          ?>
       </tbody>
     </table>

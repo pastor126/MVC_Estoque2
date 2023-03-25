@@ -13,8 +13,10 @@
       <tbody>
         <?php
           foreach ($fabricantes as $fabricante) {
+            if($fabricante['ativo']=="true"){
               $path_editar = APP.'fabricante/editar';
               $path_excluir = APP.'fabricante/excluir';
+              $path_excluirF = APP.'fabricante/excluirF';
               
               echo "
               <tr>
@@ -22,10 +24,11 @@
                 <td>{$fabricante['nome']}</td>
                 <td>{$fabricante['cnpj']}</td>
                 <td><a class='btn btn-warning' href='$path_editar/{$fabricante['id']}'>Editar</a></td>
-                <td><a class='btn btn-danger' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluir/{$fabricante['id']}'>Excluir</a></td>
+                <td><a class='btn btn-danger' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluirF/{$fabricante['id']}'>Excluir</a></td>
               </tr>
               ";
           }
+        }
          ?>
       </tbody>
     </table>

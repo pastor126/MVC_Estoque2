@@ -16,6 +16,7 @@
        $compra['produto_descricao'] = "";
        $compra['quantidade'] = "";
        $compra['quant1'] = "";
+       $compra['forma_pag'] = "";
 
        $modelProduto = new Produto();
        $produtos = $modelProduto -> read();
@@ -26,7 +27,10 @@
        $modelFabricante = new Fabricante();
        $fabricantes = $modelFabricante -> read();
 
-       $this->view('frmCompra', compact('compra', 'produtos', 'fabricantes', 'tipos'));
+       $modelForma_pag = new Forma_pag();
+       $forma_pags = $modelForma_pag -> read();
+
+       $this->view('frmCompra', compact('compra', 'produtos', 'fabricantes', 'tipos', 'forma_pags'));
      }
 
      function salvar() {
@@ -38,6 +42,7 @@
        $compra['quantidade'] = $_POST['quantidade'];
        $compra['data'] = $data;
        $compra['produto_id'] = $_POST['produto_id'];
+       $compra['forma_pag_id'] = $_POST['forma_pag_id'];
 
       $modelProduto = new Produto();
       $produto = $modelProduto -> getById($compra['produto_id']);
@@ -57,16 +62,27 @@
      function editar($id) {
        $model = new Compra();
        $compra = $model->getById($id);
+
        $quant2 = $compra['quantidade'] - $compra['quant1'];
        
        $modelProdutos = new Produto();
        $produtos = $modelProdutos -> read();
        $modelProduto = new Produto();
        $produto = $modelProduto -> getById($compra['produto_id']);
-       $produto['qtde_estoque'] = $produto['qtde_estoque'] + $quant2;
+       if($produto['ativo'] == 'true'){
+        $produto['qtde_estoque'] = $produto['qtde_estoque'] + $quant2;
+       }
+       else{
+        $produto['ativo'] = 'true';
+        $produto['qtde_estoque'] = $compra['quantidade'];
+       }
+       
        $modelProduto -> update($produto);
 
-       $this->view('frmCompra', compact('compra','produtos'));
+       $modelForma_pag = new Forma_pag();
+       $forma_pags = $modelForma_pag -> read();
+
+       $this->view('frmCompra', compact('compra','produtos', 'forma_pags'));
      }
 
      function excluir($id) {
@@ -75,7 +91,13 @@
      
        $modelProduto = new Produto();
        $produto = $modelProduto -> getById($compra['produto_id']);
-       $produto['qtde_estoque'] = $produto['qtde_estoque'] + $compra['quantidade'];
+       if($produto['ativo'] == 'true'){
+        $produto['qtde_estoque'] = $produto['qtde_estoque'] + $compra['quantidade'];
+       }
+       else{
+        $produto['ativo'] = 'true';
+        $produto['qtde_estoque'] = $compra['quantidade'];
+       }
 
        $modelProduto -> update($produto); 
        $modelCompra->delete($id);

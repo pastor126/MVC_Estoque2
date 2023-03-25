@@ -8,8 +8,10 @@
           <th>Tipo</th>
           <th>Produto</th>
           <th>Fabricante</th>
-          <th>Quantidade</th>
+          <th>Qtde</th>
           <th>Preço</th>
+          <th>Total</th>
+          <th>Forma de Pagamento</th>
           <th>Editar</th>
           <th>Excluir</th>
         </tr>
@@ -22,6 +24,7 @@
               $data = date("d/m/Y",  strtotime($compra['data']));
               $path_editar = APP.'compra/editar';
               $path_excluir = APP.'compra/excluir';
+              $total = $compra['quantidade'] * $compra['produto_valor_venda'];
               echo "
               <tr>
                 <td>{$compra['id']}</td>
@@ -31,6 +34,8 @@
                 <td>{$compra['fabricante_nome']}</td>
                 <td>{$compra['quantidade']}</td>
                 <td>{$compra['produto_valor_venda']}</td>
+                <td>{$total}</td>
+                <td>{$compra['forma_pag_tipo']}</td>
                 <td><a class='btn btn-warning' href='$path_editar/{$compra['id']}'>Editar</a></td>
                 <td><a class='btn btn-danger' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluir/{$compra['id']}'>Excluir</a></td>
 

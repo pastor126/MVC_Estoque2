@@ -1,4 +1,4 @@
-<h1>Cadastro</h1>
+<h1>Cadastro de Fabricante</h1>
     <form action="<?php echo APP; ?>fabricante/salvar" method="post">
       <div class="mb-3">
           <label for="id" class="form-label">ID</label>

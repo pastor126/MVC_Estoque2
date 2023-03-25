@@ -32,9 +32,11 @@
       $this -> view("frmTipo", compact('tipo'));
     }
 
-    function excluir($id) {
+    function excluirT($id) {
       $model = new Tipo();
-      $model->delete($id);
+      $tipo = $model -> getById($id);
+      $tipo['ativo'] = 'false';
+      $model->update($tipo);
       $this -> redirect("tipo/listar");
     }
   }

@@ -34,7 +34,17 @@
     <input readonly type="text" class="form-control" id="quant1" value="<?php $compra['quant1']; ?>" name="quant1" style="display: none" >
   </div>
 
-
+  <div class="mb-3">
+    <label for="tipo" class="form-label" >Forma de Pagamento</label>
+    <select class="form-select" name="forma_pag_id" id="forma_pag_id">
+      <?php
+      foreach ($forma_pags as $forma_pag) {
+        $selected = $forma_pag['id'] == $compra['forma_pag_id'] ? 'selected' : '';
+        echo "<option $selected value='{$forma_pag['id']}'>{$forma_pag['tipo']}</option>";
+      }
+      ?>
+    </select>
+  </div>
 
   <button class="btn btn-primary" type="submit" name="button">Salvar</button>
   <a class="btn btn-success"  href="<?php echo APP.'compra/listar' ?>" >Voltar</a>

@@ -61,11 +61,7 @@
        $this->view('frmProduto', compact('produto', 'tipos', 'fabricantes'));
      }
 
-     function excluir($id) {
-       $model = new Produto();
-       $model->delete($id);
-       $this->redirect('produto/listar');
-     }
+
 
      function excluirP($id) {
       $model = new Produto();
