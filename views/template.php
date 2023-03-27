@@ -109,6 +109,10 @@
           <a class="nav-link active" aria-current="page" href="<?php echo APP.'forma_pag/listar' ?>">Formas de Pagamento</a>
         </li>
 
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo APP.'cliente/listar' ?>">Clientes</a>
+        </li>
+
       </ul>
     </div>
   </div>

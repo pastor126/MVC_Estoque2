@@ -17,6 +17,7 @@
        $compra['quantidade'] = "";
        $compra['quant1'] = "";
        $compra['forma_pag'] = "";
+       $compra['ciente'] = "";
 
        $modelProduto = new Produto();
        $produtos = $modelProduto -> read();
@@ -30,7 +31,10 @@
        $modelForma_pag = new Forma_pag();
        $forma_pags = $modelForma_pag -> read();
 
-       $this->view('frmCompra', compact('compra', 'produtos', 'fabricantes', 'tipos', 'forma_pags'));
+       $modelCliente = new Cliente();
+       $clientes = $modelCliente -> read();
+
+       $this->view('frmCompra', compact('compra', 'produtos', 'fabricantes', 'tipos', 'forma_pags', 'clientes'));
      }
 
      function salvar() {
@@ -43,6 +47,7 @@
        $compra['data'] = $data;
        $compra['produto_id'] = $_POST['produto_id'];
        $compra['forma_pag_id'] = $_POST['forma_pag_id'];
+       $compra['cliente_id'] = $_POST['cliente_id'];
 
       $modelProduto = new Produto();
       $produto = $modelProduto -> getById($compra['produto_id']);
@@ -82,7 +87,10 @@
        $modelForma_pag = new Forma_pag();
        $forma_pags = $modelForma_pag -> read();
 
-       $this->view('frmCompra', compact('compra','produtos', 'forma_pags'));
+       $modelCliente = new Cliente();
+       $clientes = $modelCliente -> read();
+
+       $this->view('frmCompra', compact('compra','produtos', 'forma_pags', 'clientes'));
      }
 
      function excluir($id) {

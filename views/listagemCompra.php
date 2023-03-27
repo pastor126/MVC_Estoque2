@@ -1,10 +1,12 @@
 <h1>Compras</h1>
-    <a class="btn btn-primary mb-2" href="<?php echo APP; ?>compra/novo">Cadastrar</a>
+    <a class="btn btn-primary mb-2" href="<?php echo APP; ?>compra/novo">Cadastrar Compra</a>
     <table class="table table-striped table-hover table-bordered">
-      <thead>
+    
+    <thead>
         <tr>
           <th>ID</th>
           <th>Data</th>
+          <th>Cliente</th>
           <th>Tipo</th>
           <th>Produto</th>
           <th>Fabricante</th>
@@ -29,6 +31,7 @@
               <tr>
                 <td>{$compra['id']}</td>
                 <td>$data</td>
+                <td>{$compra['cliente_nome']}</td> 
                 <td>{$compra['tipo_nome_tipo']}</td> 
                 <td>{$compra['produto_descricao']}</td>
                 <td>{$compra['fabricante_nome']}</td>

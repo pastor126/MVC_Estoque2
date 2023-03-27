@@ -9,17 +9,37 @@
   </div>
 
   <div class="mb-3">
+    <label for="nome" class="form-label" >Cliente</label>
+  <div  style="display: flex; align-items: center;">
+    <select style="width: 85%;" class="form-select" name="cliente_id" id="cliente_id">
+      <?php
+      foreach ($clientes as $cliente) {
+        if($cliente['ativo'] == 'true'){
+           $selected = $cliente['id'] == $compra['cliente_id'] ? 'selected' : '';
+        echo "<option $selected value='{$cliente['id']}'>{$cliente['nome']}'</option>";
+        }     
+      }
+      ?>
+    </select>
+    <a class="btn btn-success ms-3"  href="<?php echo APP.'cliente/listar' ?>" >Novo Cliente</a>
+    </div>  
+  </div>
+
+
+  <div class="mb-3">
     <label for="descricao" class="form-label" >Produto</label>
     <select class="form-select" name="produto_id" id="produto_id">
       <?php
       foreach ($produtos as $produto) {
-        $selected = $produto['id'] == $compra['produto_id'] ? 'selected' : '';
-        echo "<option $selected value='{$produto['id']}'>{$produto['descricao']}</option>";
+        if($produto['ativo'] == 'true'){
+           $selected = $produto['id'] == $compra['produto_id'] ? 'selected' : '';
+        echo "<option $selected value='{$produto['id']}'>{$produto['descricao']}'</option>";
+        }     
       }
       ?>
     </select>
   </div>
-
+  
   <div class="mb-3">
     <?php
     if ($compra['id'] == 0) {
@@ -56,18 +76,14 @@
     var quantidade = parseInt(document.querySelector('#quantidade').value);
     var qtde_estoque = parseInt('<?php echo $produto["qtde_estoque"]; ?>');
     var id = parseInt(document.querySelector('#id').value);
- if(id == 0){
+ 
    if (quantidade > qtde_estoque) {
       alert('Quantidade de compra maior do que a quantidade em estoque.');
     }  
     else{
         this.submit();
       }
- 
-    }
-    else{
-      this.submit();
-    }
+
    
       
     
