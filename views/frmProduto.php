@@ -1,4 +1,4 @@
-<h1>Cadastro de Produto</h1>
+<h4>Cadastro de Produto</h4>
 <form action="<?php echo APP; ?>produto/salvar" method="post">
   <div class="mb-3">
       <label for="id" class="form-label">ID</label>

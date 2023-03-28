@@ -1,4 +1,4 @@
-<h1>Cadastrar</h1>
+<h4>Cadastrar</h4>
     <form action="<?php echo APP; ?>forma_pag/salvar" method="post">
       <div class="mb-3">
           <label for="id" class="form-label">ID</label>

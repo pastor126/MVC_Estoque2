@@ -1,4 +1,4 @@
-<h1>Cadastro de Tipo</h1>
+<h4>Cadastro de Tipo</h4>
     <form action="<?php echo APP; ?>tipo/salvar" method="post">
       <div class="mb-3">
           <label for="id" class="form-label">ID</label>
