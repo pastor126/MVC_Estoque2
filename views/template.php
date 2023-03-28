@@ -118,8 +118,8 @@
   </div>
 </nav>
 
-<main class="container">
-  <div class="bg-light p-5 rounded">
+<main style="padding-top: 0px;"  class="container">
+  <div class="bg-light p-1 rounded">
     <?php
       require_once $arquivo;
      ?>

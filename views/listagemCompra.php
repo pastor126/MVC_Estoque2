@@ -1,4 +1,4 @@
-<h1>Compras</h1>
+<h4>Compras</h4>
     <a class="btn btn-primary mb-2" href="<?php echo APP; ?>compra/novo">Cadastrar Compra</a>
     <table class="table table-striped table-hover table-bordered">
     
@@ -13,7 +13,7 @@
           <th>Qtde</th>
           <th>Preço</th>
           <th>Total</th>
-          <th>Forma de Pagamento</th>
+          <th>Forma Pag.</th>
           <th>Editar</th>
           <th>Excluir</th>
         </tr>

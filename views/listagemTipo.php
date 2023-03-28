@@ -1,4 +1,4 @@
-<h1>Tipo de Produto</h1>
+<h4>Tipo de Produto</h4>
     <a class="btn btn-primary mb-2" href="<?php echo APP; ?>tipo/novo">Cadastrar</a>
     <table class="table table-striped table-hover table-bordered">
       <thead>

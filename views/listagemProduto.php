@@ -1,4 +1,4 @@
-<h1>Produtos</h1>
+<h4>Produtos</h4>
     <a class="btn btn-primary mb-2" href="<?php echo APP; ?>produto/novo">Cadastrar</a>
     <table class="table table-striped table-hover table-bordered">
       <thead>
@@ -17,9 +17,7 @@
       </thead>
       <tbody>
         <?php
-          foreach ($produtos as $produto) {
-            
-
+          foreach ($produtos as $produto) {         
               if($produto['ativo']=="true"){
                 $data = date("d/m/Y",  strtotime($produto['data']));
                 $path_editar = APP.'produto/editar';

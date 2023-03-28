@@ -1,4 +1,4 @@
-<h1>Cadastrar Cliente</h1>
+<h4>Cadastrar Cliente</h4>
     <form action="<?php echo APP; ?>cliente/salvar" method="post">
       <div class="mb-3">
           <label for="id" class="form-label">ID</label>

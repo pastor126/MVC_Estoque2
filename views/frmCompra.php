@@ -1,5 +1,5 @@
 
-<h1>Cadastro de Compras</h1>
+<h4>Cadastro de Compras</h4>
 <form action="<?php echo APP; ?>compra/salvar" method="post">
 
 
@@ -59,9 +59,11 @@
     <select class="form-select" name="forma_pag_id" id="forma_pag_id">
       <?php
       foreach ($forma_pags as $forma_pag) {
+        if($forma_pag['ativo'] == 'true'){
         $selected = $forma_pag['id'] == $compra['forma_pag_id'] ? 'selected' : '';
         echo "<option $selected value='{$forma_pag['id']}'>{$forma_pag['tipo']}</option>";
       }
+    }
       ?>
     </select>
   </div>

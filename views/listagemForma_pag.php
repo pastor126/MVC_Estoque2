@@ -1,4 +1,4 @@
-<h1>Formas de pagamento</h1>
+<h4>Formas de pagamento</h4>
     <a class="btn btn-primary mb-2" href="<?php echo APP; ?>forma_pag/novo">Cadastrar forma de pagamento</a>
     <table class="table table-striped table-hover table-bordered">
       <thead>

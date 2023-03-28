@@ -1,4 +1,4 @@
-<h1>Clientes</h1>
+<h4>Clientes</h4>
     <a class="btn btn-primary mb-2" href="<?php echo APP; ?>cliente/novo">Cadastrar Novo Cliente</a>
     <table class="table table-striped table-hover table-bordered">
       <thead>

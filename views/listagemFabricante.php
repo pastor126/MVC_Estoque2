@@ -1,4 +1,4 @@
-<h1>Fabricantes</h1>
+<h4>Fabricantes</h4>
     <a class="btn btn-primary mb-2" href="<?php echo APP; ?>fabricante/novo">Cadastrar</a>
     <table class="table table-striped table-hover table-bordered">
       <thead>
