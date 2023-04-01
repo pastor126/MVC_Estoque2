@@ -17,7 +17,7 @@
        $compra['quantidade'] = "";
        $compra['quant1'] = "";
        $compra['forma_pag'] = "";
-       $compra['ciente'] = "";
+       $compra['cliente'] = "";
 
        $modelProduto = new Produto();
        $produtos = $modelProduto -> read();

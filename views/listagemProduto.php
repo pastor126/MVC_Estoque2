@@ -1,5 +1,5 @@
 <h4>Produtos</h4>
-    <a class="btn btn-primary mb-2" href="<?php echo APP; ?>produto/novo">Cadastrar</a>
+    <a class="btn btn-primary mb-2 btn-sm" href="<?php echo APP; ?>produto/novo">Cadastrar</a>
     <table class="table table-striped table-hover table-bordered">
       <thead>
         <tr>
@@ -21,7 +21,6 @@
               if($produto['ativo']=="true"){
                 $data = date("d/m/Y",  strtotime($produto['data']));
                 $path_editar = APP.'produto/editar';
-                $path_excluir = APP.'produto/excluir';
                 $path_excluirP = APP.'produto/excluirP';
                  echo "
               <tr>
@@ -33,8 +32,8 @@
                 <td>{$produto['qtde_estoque']}</td>
                 <td>{$produto['valor_compra']}</td>
                 <td>{$produto['valor_venda']}</td>
-                <td><a class='btn btn-warning' href='$path_editar/{$produto['id']}'>Editar</a></td>
-                <td><a class='btn btn-danger' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluirP/{$produto['id']}'>Excluir</a></td>
+                <td><a class='btn btn-warning btn-sm' href='$path_editar/{$produto['id']}'>Editar</a></td>
+                <td><a class='btn btn-danger btn-sm' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluirP/{$produto['id']}'>Excluir</a></td>
 
               </tr>
               ";

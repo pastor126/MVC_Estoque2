@@ -1,5 +1,5 @@
 <h4>Clientes</h4>
-    <a class="btn btn-primary mb-2" href="<?php echo APP; ?>cliente/novo">Cadastrar Novo Cliente</a>
+    <a class="btn btn-primary mb-2 btn-sm" href="<?php echo APP; ?>cliente/novo">Cadastrar Novo Cliente</a>
     <table class="table table-striped table-hover table-bordered">
       <thead>
         <tr>
@@ -20,8 +20,8 @@
               <tr>
                 <td>{$cliente['id']}</td>
                 <td>{$cliente['nome']}</td>
-                <td><a class='btn btn-warning' href='$path_editar/{$cliente['id']}'>Editar</a></td>
-                <td><a class='btn btn-danger' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluirC/{$cliente['id']}'>Excluir</a></td>
+                <td><a class='btn btn-warning btn-sm' href='$path_editar/{$cliente['id']}'>Editar</a></td>
+                <td><a class='btn btn-danger btn-sm' onclick='return confirm(\"Você deseja Excluir?\")' href='$path_excluirC/{$cliente['id']}'>Excluir</a></td>
               </tr>
               ";
           }
@@ -30,5 +30,5 @@
          
       </tbody>
     </table>
-    <a class="btn btn-success"  href="<?php echo APP.'compra/novo' ?>" >Cadastrar Compra</a>
+    <a class="btn btn-success btn-sm"  href="<?php echo APP.'compra/novo' ?>" >Cadastrar Compra</a>
  

@@ -9,6 +9,6 @@
           <input type="text" class="form-control" id="nome" value="<?php echo $cliente['nome']; ?>" name="nome">
       </div>
 
-      <button class="btn btn-primary" type="submit" name="button">Salvar</button>
-      <a class="btn btn-success"  href="<?php echo APP.'cliente/listar' ?>" >Voltar</a>
+      <button class="btn btn-primary btn-sm" type="submit" name="button">Salvar</button>
+      <a class="btn btn-success btn-sm"  href="<?php echo APP.'cliente/listar' ?>" >Voltar</a>
     </form>

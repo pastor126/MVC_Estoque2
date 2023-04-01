@@ -1,5 +1,5 @@
 
-<h4>Cadastro de Compras</h4>
+<h5>Cadastro de Compras</h5>
 <form action="<?php echo APP; ?>compra/salvar" method="post">
 
 
@@ -68,8 +68,8 @@
     </select>
   </div>
 
-  <button class="btn btn-primary" type="submit" name="button">Salvar</button>
-  <a class="btn btn-success"  href="<?php echo APP.'compra/listar' ?>" >Voltar</a>
+  <button class="btn btn-primary btn-sm" type="submit" name="button">Salvar</button>
+  <a class="btn btn-success btn-sm"  href="<?php echo APP.'compra/listar' ?>" >Voltar</a>
 
   <script>
   document.querySelector('form').addEventListener('submit', function(event) {
