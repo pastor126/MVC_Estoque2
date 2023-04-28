@@ -35,7 +35,7 @@
 
   <div class="mb-3">
       <label for="valor_venda" class="form-label">Preço</label>
-      <input type="text" class="form-control" id="valor_venda" value="<?php echo $produto['valor_venda']; ?>" name="valor_venda">
+      <input readonly type="text" class="form-control" id="valor_venda" value="<?php echo $produto['valor_venda']; ?>" name="valor_venda">
   </div>
 
   <div class="mb-3">
